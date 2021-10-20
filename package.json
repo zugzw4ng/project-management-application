@@ -1,0 +1,29 @@
+{
+  "name": "project-management-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zugzw4ng/project-management-application.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zugzw4ng/project-management-application/issues"
+  },
+  "homepage": "https://github.com/zugzw4ng/project-management-application#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.7.0"
+  }
+}
