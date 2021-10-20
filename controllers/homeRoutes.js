@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const { Project, User } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
+
+// renders homepage(login page) upon start of application
+router.get('/', async (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  res.render('homepage');
+});
+
 
 router.get('/', async (req, res) => {
   try {
@@ -18,9 +28,9 @@ router.get('/', async (req, res) => {
     const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+    res.render('profile', {
+      projects,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -49,8 +59,7 @@ router.get('/project/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {

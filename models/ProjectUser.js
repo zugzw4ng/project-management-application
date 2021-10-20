@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model { }
+class ProjectUser extends Model { }
 
-Task.init(
+ProjectUser.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,23 +11,12 @@ Task.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
-        status: {
-            type: DataTypes.STRING,
-            defaultValue: "To Do"
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
+                unique: false
             },
         },
         project_id: {
@@ -35,18 +24,17 @@ Task.init(
             references: {
                 model: 'project',
                 key: 'id',
+                unique: false
             },
         },
     },
     {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'task',
+        modelName: 'projectUser',
     }
 );
 
-// stretch goal deadline for task
-
-module.exports = Task;
+module.exports = ProjectUser
