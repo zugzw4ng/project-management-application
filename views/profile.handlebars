@@ -1,48 +1,52 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2 class="header">Welcome, {{req.session.logged_in.username}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+<div class="container">
+  <div class="row">
+    <div class="col s6">
+      <div class="row">
+        <h3 class="header">Create a New Project:</h3>
+        <form class="form new-project-form">
+          <div class="form-group">
+            <label for="project-name">Name of Project:</label>
+            <input class="form-input" type="text" id="project-name" name="project-name" />
+          </div>
+          <div class="form-group">
+            <label for="your team">Team Members:</label>
+            <input class="form-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="your team">Deadline:</label>
+            <input type="text" class="datepicker">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+        </form>
+      </div>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="your team">Team Members:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="roles">  project description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
+      {{#if projects.length}}
+      <div class="col-md-6 project-list">
+        <h3>Current Projects:</h3>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        {{#each projects as |project|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+          </div>
+        </div>
+        {{/each}}
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+      {{/if}}
     </div>
-    {{/each}}
   </div>
-  {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+
+<script src="/js/profile.js"></script>
