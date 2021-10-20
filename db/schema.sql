@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS pma_db;
+
+CREATE DATABASE pma_db;
