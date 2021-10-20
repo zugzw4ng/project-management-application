@@ -27,4 +27,4 @@ Task.belongsTo(Project, {
     foreignKey: 'project_id'
 });
 
-module.exports = { User, Project, Task };
+module.exports = { User, Project, Task, ProjectUser };
