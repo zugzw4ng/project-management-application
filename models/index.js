@@ -1,13 +1,22 @@
 const User = require("./User");
 const Project = require("./Project");
 const Task = require("./Task");
+const ProjectUser = require("./ProjectUser")
 
-User.hasMany(Project, {
-    foreignKey: 'user_id'
+User.belongsToMany(Project, {
+    through: {
+        model: ProjectUser,
+        unique: false
+    },
+    as: "group_members"
 });
 
-Project.hasMany(User, {
-    foreignKey: 'user_id'
+Project.belongsToMany(User, {
+    through: {
+        model: ProjectUser,
+        unique: false
+    },
+    as: "separate_projects"
 });
 
 Project.hasMany(Task, {

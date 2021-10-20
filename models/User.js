@@ -56,7 +56,8 @@ User.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
-    }
+
+    },
 );
 
 module.exports = User;

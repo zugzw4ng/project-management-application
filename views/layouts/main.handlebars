@@ -18,15 +18,16 @@
         <li><a href="">Placeholder</a></li>
         <li><a href="">Placeholder</a></li>
         <li><a href="">Placeholder</a></li>
-        {{else}}
-        <li><a href="/login">Login or Sign Up</a></li>
         {{/if}}
       </ul>
     </div>
   </nav>
 
+  {{{body}}}
 
-
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
