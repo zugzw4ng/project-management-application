@@ -1,0 +1,32 @@
+[
+    {
+        "full_name": "Test UserOne",
+        "user_name": "TestUser123",
+        "email": "test123@test.com",
+        "password": "$2a$10$FuRt/eYmrMi2Zgx5UgZfJey9O41ZURsl.yWw4u9UsowaEHinSrE9S"
+    },
+    {
+        "full_name": "Test UserTwo",
+        "user_name": "TestUser234",
+        "email": "test234@test.com",
+        "password": "$2a$10$aLSlaSx9uyknR8o5lVInnuo8OQvNGIlwfm.4MOWvtwqKlwKAaPWsO"
+    },
+    {
+        "full_name": "Test UserThree",
+        "user_name": "TestUser345",
+        "email": "test345@test.com",
+        "password": "$2a$10$YUjwGjHAmjXDGveUDVJ0i.A5DooVsjDNYGeo.VqAjjgIglQjmS0/i"
+    },
+    {
+        "full_name": "Test UserFour",
+        "user_name": "TestUser456",
+        "email": "test456@test.com",
+        "password": "$2a$10$ryp7tL6eIbtFAFBnTDaWnOycCoVaSpqHEWnqCE34Luonc5RzGVPve"
+    },
+    {
+        "full_name": "Test UserFive",
+        "user_name": "TestUser567",
+        "email": "test567@test.com",
+        "password": "$2a$10$sGcCv5Np1J0X7409N3ptxuTD9I4vdjPTe84ON5.f6AaNEjMCdXkum"
+    }
+]
