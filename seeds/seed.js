@@ -13,6 +13,8 @@ const seedDatabase = async () => {
         returning: true,
     });
 
+    const tasks = await Task.bulkCreate(taskSeedData);
+
     for (const project of projectSeedData) {
         await Project.create({
             ...project,
