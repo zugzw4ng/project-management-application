@@ -14,6 +14,19 @@
             <label for="project-name">Name of Project:</label>
             <input class="form-input" type="text" id="project-name" name="project-name" />
           </div>
+
+          <div class="form-group">
+            <div class="input-field">
+              <select multiple>
+                <option value="" disabled selected>Choose your Teammates</option>
+                {{#each users as |user|}}
+                <option value="1">{{user.full_name}}</option>
+                {{/each}}
+              </select>
+              <label>Add Teammates</label>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="your team">Deadline:</label>
             <input type="text" class="datepicker" id="project-deadline" />

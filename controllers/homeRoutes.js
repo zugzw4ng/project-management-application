@@ -2,6 +2,19 @@ const router = require('express').Router();
 const { Project, User, Task, ProjectUser } = require('../models');
 // const withAuth = require('../utils/auth');
 
+router.get('/profile', async (req, res) => {
+  try {
+    const allUsers = await User.findAll();
+    const users = allUsers.map((user) => user.get({ plain: true }));
+    res.render('profile', {
+      users,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 // renders homepage(login page) upon start of application
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
