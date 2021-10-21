@@ -14,16 +14,28 @@
             <label for="project-name">Name of Project:</label>
             <input class="form-input" type="text" id="project-name" name="project-name" />
           </div>
-          <div class="form-group">
+          {{!-- <div class="form-group">
             <label for="your team">Team Members:</label>
             <input class="form-input" type="text" />
-          </div>
+          </div> --}}
           <div class="form-group">
             <label for="your team">Deadline:</label>
-            <input type="text" class="datepicker">
+            <input type="text" class="datepicker" id="project-deadline">
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Create</button>
+            <!-- Dropdown Trigger -->
+            <div class="input-field col s12">
+              <!-- Dropdown Structure -->
+              <select id="project_status">
+                <option disable selected>Project Status</option>
+                <option>Not Started</option>
+                <option>In Progress</option>
+                <option>Complete</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="project-submit">Create</button>
           </div>
         </form>
       </div>
@@ -35,7 +47,8 @@
         {{#each user.user_projects}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="">{{this}}</a></h4>
+            <h4><a href="">{{this.name}}</a></h4>
+            <h4><a href="">{{this.deadline}}</a></h4>
           </div>
           <div class="col-md-4">
             {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
