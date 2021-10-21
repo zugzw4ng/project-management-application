@@ -23,6 +23,16 @@
             <input type="text" class="datepicker">
           </div>
           <div class="form-group">
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Status</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">Not Started</a></li>
+              <li><a href="#!">In Progress</a></li>
+              <li><a href="#!">Complete</a></li>
+            </ul>
+          </div>
+          <div class="form-group">
             <button type="submit" class="btn btn-primary">Create</button>
           </div>
         </form>
@@ -35,7 +45,8 @@
         {{#each user.user_projects}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="">{{this}}</a></h4>
+            <h4><a href="">{{this.name}}</a></h4>
+            <h4><a href="">{{this.deadline}}</a></h4>
           </div>
           <div class="col-md-4">
             {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
