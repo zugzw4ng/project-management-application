@@ -8,7 +8,7 @@ User.belongsToMany(Project, {
         model: ProjectUser,
         unique: false
     },
-    as: "group_members"
+    as: "user_projects"
 });
 
 Project.belongsToMany(User, {
@@ -16,7 +16,7 @@ Project.belongsToMany(User, {
         model: ProjectUser,
         unique: false
     },
-    as: "separate_projects"
+    as: "group_members"
 });
 
 Project.hasMany(Task, {

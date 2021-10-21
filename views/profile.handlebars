@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="header">Welcome, {{req.session.logged_in.username}}!</h2>
+    <h2 class="header">Welcome, {{user.full_name}}!</h2>
   </div>
 </div>
 
@@ -28,22 +28,22 @@
         </form>
       </div>
 
-      {{#if projects.length}}
+
       <div class="col-md-6 project-list">
         <h3>Current Projects:</h3>
 
-        {{#each projects as |project|}}
+        {{#each user.user_projects}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+            <h4><a href="">{{this}}</a></h4>
           </div>
           <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+            {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
           </div>
         </div>
         {{/each}}
       </div>
-      {{/if}}
+
     </div>
   </div>
 </div>
