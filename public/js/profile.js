@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var instances = M.FormSelect.init(elems);
 });
 
+// Materialize collapsible 
+ document.addEventListener("DOMContentLoaded", function () {
+   var elems = document.querySelectorAll(".collapsible");
+   var instances = M.Collapsible.init(elems);
+ });
+
 const newFormHandler = async (event) => {
     event.preventDefault();
     const projectName = document.querySelector("#project-name").value.trim();
