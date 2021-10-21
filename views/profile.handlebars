@@ -1,3 +1,7 @@
+<head>
+<link rel="stylesheet" href="/css/profile.css">
+</head>
+
 <div class="row">
   <div class="col-auto">
     <h2 class="header">Welcome, {{user.full_name}}!</h2>
@@ -6,7 +10,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col s6">
+    <div class="col_s6">
       <div class="row">
         <h3 class="header">Create a New Project:</h3>
         <form class="form new-project-form">
@@ -54,6 +58,20 @@
         </div>
         {{/each}}
       </div>
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i></div>
+      <div class="collapsible-body"><span>.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i></div>
+      <div class="collapsible-body"><span>.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i></div>
+      <div class="collapsible-body"><span></span></div>
+    </li>
+  </ul>
 
     </div>
   </div>

@@ -1,0 +1,12 @@
+.form-group{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    background-color: aliceblue;
+    width: 40%;
+
+}
+
+.col_s6{
+    font-size: 16px;
+}
