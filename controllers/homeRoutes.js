@@ -28,7 +28,7 @@ router.get(`/profile`, async (req, res) => {
       return;
     }
     const user = userData.get({ plain: true });
-    console.log(user.user_projects);
+    console.log(user);
 
     res.render('profile', { //user.user_projects. each array
       user,
