@@ -6,6 +6,7 @@ const { Project, User, Task, ProjectUser } = require('../models');
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/profile');
+    console.log("hellllllo");
     return;
   }
   res.render('homepage', {
@@ -13,9 +14,9 @@ router.get('/', async (req, res) => {
   });
 });
 // renders all projects under logged in user
-router.get('/profile', async (req, res) => {
+router.get('/profile/:id', async (req, res) => {
   try {
-    const projectData = await Project.findAll({
+    const projectData = await User.findByPk({
       include: [
         {
           model: User, through: ProjectUser, as: 'separate_projects'
@@ -26,6 +27,7 @@ router.get('/profile', async (req, res) => {
     const projects = projectData.map((project) => project.get({ plain: true }));
     console.log("YOU GOT HERE", projects);
     res.render('profile', {
+
       projects,
       logged_in: req.session.logged_in
     });

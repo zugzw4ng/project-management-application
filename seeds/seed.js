@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Project, Task } = require('../models');
+const { User, Project, Task, ProjectUser } = require('../models');
 
 const userSeedData = require('./userSeedData.json');
 const projectSeedData = require('./projectSeedData.json');
@@ -12,16 +12,34 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
+    // const tasks = await Task.bulkCreate(taskSeedData);
+    const projects = await Project.bulkCreate(projectSeedData)
 
-    const tasks = await Task.bulkCreate(taskSeedData);
-
-    for (const project of projectSeedData) {
-        await Project.create({
-            ...project,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
+    // randomly deals out tasks to projects
+    for (const task of taskSeedData) {
+        const newTask = await Task.create({
+            ...task,
+            project_id: projects[Math.floor(Math.random() * projects.length)].id,
         });
     }
 
+    // create ProjectUser info at random
+    for (let i = 0; i < 10; i++) {
+        // random user id
+        const { id: randomUserId } = users[
+            Math.floor(Math.random() * users.length)
+        ];
+        // random project id 
+        const { id: randomProjectId } = projects[
+            Math.floor(Math.random() * projects.length)
+        ];
+        await ProjectUser.create({
+            user_id: randomUserId,
+            project_id: randomProjectId
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
     process.exit(0);
 };
 
