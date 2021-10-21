@@ -44,7 +44,8 @@
         <ul class="collapsible">
           {{#each user.user_projects}}
           <li>
-            <div class="collapsible-header"><a href="/dashboard/{{this.id}}">{{this.name}}</a></div>
+            <div class="collapsible-header"><a href="/dashboard/{{this.id}}"><i
+                  class="fas fa-laptop"></i></a>{{this.name}}</div>
             <div class="collapsible-body"><span>{{this.deadline}}</span></div>
           </li>
           {{/each}}

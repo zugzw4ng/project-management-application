@@ -5,7 +5,6 @@ const { Project, User, Task, ProjectUser } = require('../models');
 // renders homepage(login page) upon start of application
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
-    console.log(req.session);
     res.redirect(`/profile`);
     return;
   }
@@ -27,9 +26,7 @@ router.get(`/profile`, async (req, res) => {
       res.status(404).json({ message: 'No user found with that id!' });
       return;
     }
-    console.log(userData);
     const user = userData.get({ plain: true });
-    console.log(user);
     res.render('profile', {
       user,
       logged_in: req.session.logged_in
@@ -45,6 +42,11 @@ router.get('/dashboard/:id', async (req, res) => {
       include: [
         {
           model: User, as: 'group_members', through: ProjectUser
+        },
+        {
+          model: Task, attributes: [
+            "id", "title", "description", "status"
+          ]
         },
       ],
     });
