@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
+// create a new project
 router.post('/', async (req, res) => {
   try {
     const newProject = await Project.create({
