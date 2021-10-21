@@ -23,14 +23,14 @@ router.get(`/profile`, async (req, res) => {
         },
       ],
     });
-    if (!userData) {
+    if (!userData) { // do we need this?
       res.status(404).json({ message: 'No user found with that id!' });
       return;
     }
+    console.log(userData);
     const user = userData.get({ plain: true });
     console.log(user);
-
-    res.render('profile', { //user.user_projects. each array
+    res.render('profile', {
       user,
       logged_in: req.session.logged_in
     });
@@ -38,46 +38,25 @@ router.get(`/profile`, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.get('/project/:id', async (req, res) => {
-//   try {
-//     const projectData = await Project.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const project = projectData.get({ plain: true });
-
-//     res.render('project', {
-//       ...project,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/profile', async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Project }],
-//     });
-
-//     const user = userData.get({ plain: true });
-
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// get one project by id > goes to dashboard.handlebars
+router.get('/dashboard/:id', async (req, res) => {
+  try {
+    const projectData = await Project.findByPk(req.params.id, {
+      include: [
+        {
+          model: User, as: 'group_members', through: ProjectUser
+        },
+      ],
+    });
+    const project = projectData.get({ plain: true });
+    console.log(project);
+    res.render('dashboard', {
+      project,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
