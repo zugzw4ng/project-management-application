@@ -5,6 +5,7 @@ const logout = async () => {
     });
 
     if (response.ok) {
+        console.log("YOU GOT HERE TOO!!");
         document.location.replace('/');
     } else {
         alert(response.statusText);
