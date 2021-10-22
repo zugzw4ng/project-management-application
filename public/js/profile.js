@@ -10,16 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Materialize collapsible 
- document.addEventListener("DOMContentLoaded", function () {
-   var elems = document.querySelectorAll(".collapsible");
-   var instances = M.Collapsible.init(elems);
- });
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".collapsible");
+    var instances = M.Collapsible.init(elems);
+});
 
 const newFormHandler = async (event) => {
     event.preventDefault();
     const projectName = document.querySelector("#project-name").value.trim();
     const projectDeadline = document.querySelector("#project-deadline").value.trim();
     const projectStatus = document.querySelector("#project_status").value.trim();
+
+    const usersVariable = document.querySelector("#project-users").value.trim();
 
     if (projectName && projectDeadline && projectStatus) {
         const response = await fetch('/api/profile', {
@@ -29,7 +31,6 @@ const newFormHandler = async (event) => {
                 'Content-Type': 'application/json',
             },
         });
-        console.log("YOU GOT HERE");
         if (response.ok) {
             document.location.reload();
         } else {
@@ -38,6 +39,25 @@ const newFormHandler = async (event) => {
     }
 }
 
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/profile/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert('Failed to delete project');
+        }
+    }
+};
 document
     .querySelector('#project-submit')
     .addEventListener('click', newFormHandler);
+
+document
+    .querySelector('.project-list')
+    .addEventListener('click', delButtonHandler);
