@@ -2,7 +2,7 @@
 
 ### Github Repo : https://github.com/zugzw4ng/project-management-application
 
-### Deployed App on Heroku : 
+### Deployed App on Heroku : https://stormy-fortress-72998.herokuapp.com/
 
 ## Description 
 
@@ -55,6 +55,9 @@ User(s) can collaborate with team members in order to meet project deadlines.
 Team members can set team wide or personal deadlines for projects. A project due date and time will be available to see for each project and will warn users of an upcoming deadline or when a deadline has been missed.
 
 ## Screenshots
+
+![Screen Shot 2021-10-22 at 2 43 39 PM](https://user-images.githubusercontent.com/88289885/138507055-51e72e58-1345-4500-b572-6cc7c82c7ee7.png)
+
 
 ## Technologies Used
 <p><a href="https://nodejs.org/">Node.js</a></p>
