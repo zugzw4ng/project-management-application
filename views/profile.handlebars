@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="header">Welcome, {{user.full_name}}!</h2>
+    <h3 class="header">Welcome, {{user.full_name}}!</h3>
   </div>
 </div>
 
@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col s6">
       <div class="row">
-        <h3 class="header">Create a New Project:</h3>
+        <h4 class="header">Create a New Project:</h4>
         <form class="form new-project-form">
           <div class="form-group">
             <label for="project-name">Name of Project:</label>
@@ -50,7 +50,7 @@
 
     <div class="col s6">
       <div class="project-list">
-        <h3>Current Projects:</h3>
+        <h4>Current Projects:</h4>
 
         <ul class="collapsible">
           {{#each user.user_projects}}
