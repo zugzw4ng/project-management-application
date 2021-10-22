@@ -1,3 +1,6 @@
+console.log(dayjs().format());
+dayjs.extend(dayjs_plugin_relativeTime);
+
 // Materialize collapsible 
 document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".collapsible");
@@ -8,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
 });
+
+
 // create a new task
 const newFormHandler = async (event) => {
     event.preventDefault();
@@ -34,3 +39,11 @@ const newFormHandler = async (event) => {
 document
     .querySelector('#task-submit')
     .addEventListener('click', newFormHandler);
+
+// Create time remaining until deadline  
+const deadline = document.querySelector('#deadline').innerHTML;
+const deadlineDate = deadline.slice(10).replace('-', '/');
+
+const dayJsDeadline = dayjs(deadlineDate).fromNow(true);
+
+console.log(dayJsDeadline);
