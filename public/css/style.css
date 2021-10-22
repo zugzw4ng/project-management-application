@@ -8,6 +8,7 @@ main {
     flex: 1 0 auto;
   }
 
+
   /* .form-group{
     display: flex;
     align-items: center;
@@ -40,7 +41,7 @@ main {
   font-family:'Courier New', Courier, monospace
 }
 
-.header1{
+.header{
   text-indent: 50px;
   font-size: 40px;
   opacity: 60%;
