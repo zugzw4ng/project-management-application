@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Project, User, Task, ProjectUser } = require('../models');
-// const withAuth = require('../utils/auth');
 
 // renders homepage(login page) upon start of application
 router.get('/', async (req, res) => {
@@ -12,10 +11,10 @@ router.get('/', async (req, res) => {
     logged_in: req.session.logged_in
   });
 });
-// renders all projects under logged in user and all users in system
+// renders all projects under logged in user and render all users in system
 router.get(`/profile`, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, { // renders projects
       include: [
         {
           model: Project, as: 'user_projects', through: ProjectUser
@@ -27,7 +26,7 @@ router.get(`/profile`, async (req, res) => {
       return;
     }
     const user = userData.get({ plain: true });
-    const allUsers = await User.findAll();
+    const allUsers = await User.findAll(); // renders users 
     const usersVar = allUsers.map((userAll) => userAll.get({ plain: true }));
     res.render('profile', {
       user,
@@ -38,7 +37,7 @@ router.get(`/profile`, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// get one project by id > goes to dashboard.handlebars
+// render single project by id
 router.get('/dashboard/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -48,12 +47,13 @@ router.get('/dashboard/:id', async (req, res) => {
         },
         {
           model: Task, attributes: [
-            "id", "title", "description", "status"
+            "id", "title", "description", "status", "project_id" // !! do i need this??
           ]
         },
       ],
     });
     const project = projectData.get({ plain: true });
+    console.log(project);
     res.render('dashboard', {
       project,
       logged_in: req.session.logged_in

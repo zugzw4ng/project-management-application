@@ -7,3 +7,12 @@ body {
 main {
     flex: 1 0 auto;
   }
+
+  /* .form-group{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    background-color: aliceblue;
+    width: 90%;
+
+} */
