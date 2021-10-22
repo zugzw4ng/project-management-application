@@ -8,16 +8,6 @@ main {
     flex: 1 0 auto;
   }
 
-
-  /* .form-group{
-    display: flex;
-    align-items: center;
-    font-size: large;
-    background-color: aliceblue;
-    width: 90%;
-
-} */
-
 .page-footer{
   max-height: 160px;
   background-color: blue;
@@ -63,4 +53,9 @@ h4{
 
 .row{
   padding-right: 30px;
+}
+
+.center-align{
+  font-size: 24px;
+  font-style: italic;
 }
