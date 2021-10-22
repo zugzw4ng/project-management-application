@@ -1,26 +1,26 @@
 [
     {
-        "name": "Project 1",
+        "name": "Mach Digital",
         "deadline": "Oct 04, 2021",
         "status": "On Track"
     },
     {
-        "name": "Project 2",
+        "name": "Sky Computer",
         "deadline": "Nov 04, 2021",
         "status": "On Track"
     },
     {
-        "name": "Project 3",
+        "name": "Frame Analytics",
         "deadline": "Dec 04, 2021",
         "status": "Late"
     },
     {
-        "name": "Project 4",
+        "name": "Deep Automation",
         "deadline": "Jan 04, 2022",
         "status": "Completed"
     },
     {
-        "name": "Project 5",
+        "name": "Arclight Modulation",
         "deadline": "Feb 04, 2022",
         "status": "On Track"
     }
