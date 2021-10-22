@@ -26,11 +26,11 @@ router.get(`/profile`, async (req, res) => {
       return;
     }
     const user = userData.get({ plain: true });
-    const allUsers = await User.findAll(); // renders users 
-    const usersVar = allUsers.map((userAll) => userAll.get({ plain: true }));
+    // const allUsers = await User.findAll(); // renders users 
+    // const usersVar = allUsers.map((userAll) => userAll.get({ plain: true }));
     res.render('profile', {
       user,
-      usersVar,
+      // usersVar,
       logged_in: req.session.logged_in
     });
   } catch (err) {

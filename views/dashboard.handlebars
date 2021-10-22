@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <div class="input-field col s12">
                         <select id="task_status">
-                            <option disable>Project Status</option>
+                            <option disable>Task Status</option>
                             <option>To do</option>
                             <option>In Progress</option>
                             <option>Done</option>
@@ -64,7 +64,7 @@
             <form action="#">
                 {{#each project.tasks}}
                 <label>
-                    <input type="checkbox" id="checkbox" />
+                    <input type="checkbox" id="checkbox" data-id="{{this.id}}" />
                     <span>{{this.title}}</span>
                     <p>Description: {{this.description}}</p>
                     <p>Status: {{this.status}}</p>
