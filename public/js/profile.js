@@ -21,7 +21,7 @@ const newFormHandler = async (event) => {
     const projectDeadline = document.querySelector("#project-deadline").value.trim();
     const projectStatus = document.querySelector("#project_status").value.trim();
 
-    const usersVariable = document.querySelector("#project-users").value.trim();
+    // const usersVariable = document.querySelector("#project-users").value.trim();
 
     if (projectName && projectDeadline && projectStatus) {
         const response = await fetch('/api/profile', {
