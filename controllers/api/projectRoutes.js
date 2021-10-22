@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { Project, User, ProjectUser } = require('../../models');
-// const withAuth = require('../../utils/auth');
-
 // create a new project
 router.post('/', async (req, res) => {
   try {
@@ -19,7 +17,6 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 // delete a project
 router.delete('/:id', async (req, res) => {
   try {
