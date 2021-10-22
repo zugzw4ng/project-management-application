@@ -14,17 +14,6 @@
             <label for="project-name">Name of Project:</label>
             <input class="form-input" type="text" id="project-name" name="project-name" />
           </div>
-          {{!-- <div class="form-group">
-            <div class="input-field">
-              <select multiple id="project-users">
-                <option value="" disabled>Choose your Teammates</option>
-                {{#each usersVar as |userAll|}}
-                <option value="1">{{userAll.full_name}}</option>
-                {{/each}}
-              </select>
-              <label>Add Teammates</label>
-            </div>
-          </div>--}}
           <div class="form-group">
             <label for="your team">Deadline:</label>
             <input type="text" class="datepicker" id="project-deadline" />
@@ -56,14 +45,13 @@
           {{#each user.user_projects}}
           <li>
             <div class="collapsible-header"><a href="/dashboard/{{this.id}}"><i
-                  class="fas fa-laptop"></i></a>{{this.name}}<i data-id="{{this.id}}" class="fas fa-trash-alt"></i>
-            </div>
-            <div class="collapsible-body"><span>Deadline: {{format_date this.deadline}}</span></div>
+                  class="fas fa-laptop"></i></a>{{this.name}}<div><i data-id="{{this.id}}" class="fas fa-trash-alt"></i>
+              </div>
+              <div class="collapsible-body"><span>Deadline: {{format_date this.deadline}}</span></div>
           </li>
           {{/each}}
         </ul>
         <div class="col-md-4">
-          {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
         </div>
       </div>
     </div>
