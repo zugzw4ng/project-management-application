@@ -1,27 +1,27 @@
 [
     {
-        "title": "Test TaskOne",
-        "description": "TestUser123",
+        "title": "Presentation slides",
+        "description": "create slideshow",
         "status": "In Progress"
     },
     {
-        "title": "Test TaskTwo",
-        "description": "TestUser123",
+        "title": "Go Live",
+        "description": "deploy application on the web",
         "status": "Complete"
     },
     {
-        "title": "Test TaskThree",
-        "description": "TestUser123",
+        "title": "Debugging",
+        "description": "check console logs and locate bugs",
         "status": "In Progress"
     },
     {
-        "title": "Test TaskFour",
-        "description": "TestUser123",
+        "title": "Attributions",
+        "description": "update app with attr tags/badges",
         "status": "In Progress"
     },
     {
-        "title": "Test TaskFive",
-        "description": "TestUser123",
+        "title": "Colorscheme",
+        "description": "apply uniform color styling throughout app",
         "status": "In Progress"
     }
 ]

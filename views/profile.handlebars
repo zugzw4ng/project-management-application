@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h3 class="header">Welcome, {{user.full_name}}!</h3>
+    <h2 class="header">Welcome, {{user.full_name}}!</h2>
   </div>
 </div>
 
@@ -8,22 +8,11 @@
   <div class="row">
     <div class="col s6">
       <div class="row">
-        <h4 class="header">Create a New Project:</h4>
+        <h3 class="header2">Create a New Project:</h3>
         <form class="form new-project-form">
           <div class="form-group">
             <label for="project-name">Name of Project:</label>
             <input class="form-input" type="text" id="project-name" name="project-name" />
-          </div>
-          <div class="form-group">
-            <div class="input-field">
-              <select multiple id="project-users">
-                <option value="" disabled>Choose your Teammates</option>
-                {{#each usersVar as |userAll|}}
-                <option value="1">{{userAll.full_name}}</option>
-                {{/each}}
-              </select>
-              <label>Add Teammates</label>
-            </div>
           </div>
           <div class="form-group">
             <label for="your team">Deadline:</label>
@@ -56,14 +45,13 @@
           {{#each user.user_projects}}
           <li>
             <div class="collapsible-header"><a href="/dashboard/{{this.id}}"><i
-                  class="fas fa-laptop"></i></a>{{this.name}}<i data-id="{{this.id}}" class="fas fa-trash-alt"></i>
-            </div>
-            <div class="collapsible-body"><span>Deadline: {{format_date this.deadline}}</span></div>
+                  class="fas fa-laptop"></i></a>{{this.name}}<div><i data-id="{{this.id}}" class="fas fa-trash-alt"></i>
+              </div>
+              <div class="collapsible-body"><span>Deadline: {{format_date this.deadline}}</span></div>
           </li>
           {{/each}}
         </ul>
         <div class="col-md-4">
-          {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
         </div>
       </div>
     </div>
