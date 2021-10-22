@@ -1,10 +1,5 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const { Project, User, ProjectUser, Task } = require('../../models');
-
-=======
 const { Project, Task } = require('../../models');
->>>>>>> 997d75732d95d36c69aa0507aea6b9ccc1cccacc
 // create a new task
 router.post('/', async (req, res) => {
     try {
