@@ -8,6 +8,7 @@ main {
     flex: 1 0 auto;
   }
 
+
   /* .form-group{
     display: flex;
     align-items: center;
@@ -16,3 +17,50 @@ main {
     width: 90%;
 
 } */
+
+.page-footer{
+  max-height: 160px;
+  background-color: blue;
+}
+
+.grey-text-text-lighten-3{
+  font-style: italic;
+  color: white;
+}
+
+.grey-text-text-lighten-4{
+  font-style: italic;
+}
+
+.nav-wrapper{
+  background-color: blue;
+}
+
+.brand-logo{  
+  text-indent: 50px;
+  font-family:'Courier New', Courier, monospace
+}
+
+.header{
+  text-align: center;
+  font-size: 40px;
+  opacity: 60%;
+}
+
+.header2{
+  text-align: center;
+}
+
+.project-list{
+  text-align: center;
+  margin: 20px;
+}
+
+h4{
+  font-size: 48px;
+  margin-bottom: 85px;
+}
+
+.row{
+  padding-right: 30px;
+}
