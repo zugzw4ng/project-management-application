@@ -51,4 +51,4 @@ const dayJsDeadline = date1.diff(date2, 'day');
 console.log(dayJsDeadline);
 
 const jsDeadline = document.querySelector("#jsDeadline");
-jsDeadline.textContent(dayJsDeadline);
+jsDeadline.textContent = dayJsDeadline;
