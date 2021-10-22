@@ -60,7 +60,11 @@ document
     .querySelector('#task-submit')
     .addEventListener('click', newFormHandler);
 
-// Create time remaining until deadline  
+document
+    .querySelector('#checkbox')
+    .addEventListener('click', delButtonHandler);
+
+    // Create time remaining until deadline  
 const deadline = document.querySelector('#deadline').innerHTML;
 const deadlineDate = deadline.slice(10).replace('-', '/');
 
@@ -72,6 +76,3 @@ console.log(dayJsDeadline);
 
 const jsDeadline = document.querySelector("#jsDeadline");
 jsDeadline.textContent = dayJsDeadline;
-document
-    .querySelector('#checkbox')
-    .addEventListener('click', delButtonHandler);
