@@ -4,10 +4,10 @@
             <h5>{{project.name}}</h5>
         </div>
         <div class="col">
-            <h5>Deadline: {{format_date project.deadline}}</h5>
+            <h5 id='deadline'>Deadline: {{format_date project.deadline}}</h5>
         </div>
         <div class="col">
-            <h5>Time Until Deadline:</h5>
+            <h5>Time Until Deadline: <span id="jsDeadline"></span> days remaining</h5>
         </div>
         <div class="col">
             <h5>Status: {{project.status}}</h5>
@@ -45,7 +45,7 @@
                 <div class="form-group">
                     <div class="input-field col s12">
                         <select id="task_status">
-                            <option disable>Project Status</option>
+                            <option disable>Task Status</option>
                             <option>To do</option>
                             <option>In Progress</option>
                             <option>Done</option>
@@ -63,7 +63,7 @@
             <form action="#">
                 {{#each project.tasks}}
                 <label>
-                    <input type="checkbox" id="checkbox" />
+                    <input type="checkbox" id="checkbox" data-id="{{this.id}}" />
                     <span>{{this.title}}</span>
                     <p>Description: {{this.description}}</p>
                     <p>Status: {{this.status}}</p>
@@ -71,8 +71,9 @@
                 {{/each}}
 
             </form>
-
         </div>
     </div>
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs/plugin/relativeTime"></script>
     <script src="/js/dashboard.js"></script>

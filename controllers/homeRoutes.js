@@ -11,10 +11,10 @@ router.get('/', async (req, res) => {
     logged_in: req.session.logged_in
   });
 });
-// renders all projects under logged in user and render all users in system
+// renders all projects under logged in user 
 router.get(`/profile`, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, { // renders projects
+    const userData = await User.findByPk(req.session.user_id, {
       include: [
         {
           model: Project, as: 'user_projects', through: ProjectUser
@@ -26,11 +26,8 @@ router.get(`/profile`, async (req, res) => {
       return;
     }
     const user = userData.get({ plain: true });
-    const allUsers = await User.findAll(); // renders users 
-    const usersVar = allUsers.map((userAll) => userAll.get({ plain: true }));
     res.render('profile', {
       user,
-      usersVar,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -53,7 +50,6 @@ router.get('/dashboard/:id', async (req, res) => {
       ],
     });
     const project = projectData.get({ plain: true });
-    console.log(project);
     res.render('dashboard', {
       project,
       logged_in: req.session.logged_in
