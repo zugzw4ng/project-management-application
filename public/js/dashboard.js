@@ -44,6 +44,11 @@ document
 const deadline = document.querySelector('#deadline').innerHTML;
 const deadlineDate = deadline.slice(10).replace('-', '/');
 
-const dayJsDeadline = dayjs(deadlineDate).fromNow(true);
+const date1 = dayjs(deadlineDate);
+const date2 = dayjs();
+const dayJsDeadline = date1.diff(date2, 'day');
 
 console.log(dayJsDeadline);
+
+const jsDeadline = document.querySelector("#jsDeadline");
+jsDeadline.textContent(dayJsDeadline);
