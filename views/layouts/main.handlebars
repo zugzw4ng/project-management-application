@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
 </head>
 
 <body>
   <header>
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper red lighten-1">
         <a href="/dashboard" class="brand-logo">Get To Work</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           {{#if logged_in}}
@@ -31,15 +31,15 @@
   <main>
     {{{body}}}
   </main>
-  <footer class="page-footer" id="contact">
+  <footer class="page-footer red lighten-1" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-l4-offset-l2-s12">
           <h5 class="white-text">Links</h5>
           <ul>
-            <li><a class="grey-text-text-lighten-3" href="/about">About</a></li>
-            <li><a class="grey-text-text-lighten-3" href="https://github.com/zugzw4ng/project-management-application">Github Repository</a></li>
-            <li><a class="grey-text-text-lighten-3" href={{!-- "*insert a link video to a project demo for this website*" --}}>Project Demo</a></li>
+            <li><a class="grey-text text-lighten-3" href="/about">About</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/zugzw4ng/project-management-application">Github Repository</a></li>
+            <li><a class="grey-text text-lighten-3" href={{!-- "*insert a link video to a project demo for this website*" --}}>Project Demo</a></li>
           </ul>
         </div>
       </div>
