@@ -12,7 +12,12 @@
         <form class="form new-project-form">
           <div class="form-group">
             <label for="project-name">Name of Project:</label>
-            <input class="form-input" type="text" id="project-name" name="project-name" />
+            <input
+              class="form-input"
+              type="text"
+              id="project-name"
+              name="project-name"
+            />
           </div>
           <div class="form-group">
             <label for="your team">Deadline:</label>
@@ -31,7 +36,11 @@
             </div>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="project-submit">Create</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="project-submit"
+            >Create</button>
           </div>
         </form>
       </div>
@@ -43,12 +52,16 @@
 
         <ul class="collapsible">
           {{#each user.user_projects}}
-          <li>
-            <div class="collapsible-header"><a href="/dashboard/{{this.id}}"><i
-                  class="fas fa-laptop col s6"></i></a>{{this.name}}<div><i data-id="{{this.id}}" class="fas fa-trash-alt push-10 col s6"></i>
+            <li>
+              <div class="collapsible-header"><a
+                  href="/dashboard/{{this.id}}"
+                ><i class="fas fa-laptop"></i></a>{{this.name}}
+                <i data-id="{{this.id}}" class="fas fa-trash-alt align-right">
+                </i>
               </div>
-              <div class="collapsible-body"><span>Deadline: {{format_date this.deadline}}</span></div>
-          </li>
+              <div class="collapsible-body"><span>Deadline:
+                  {{format_date this.deadline}}</span></div>
+            </li>
           {{/each}}
         </ul>
         <div class="col-md-4">
