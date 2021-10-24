@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="orange lighten-5">
   <header>
-    <nav>
+    <nav class="pink lighten-2">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">Get To Work</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -32,24 +32,21 @@
   <main>
     {{{body}}}
   </main>
-  <footer class="page-footer" id="contact">
+  <footer class="page-footer pink lighten-2" id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-l4-offset-l2-s6">
+        <div class="col-s6">
           <h5 class="white-text">Links</h5>
           <ul>
-            <li><a class="grey-text-text-lighten-3" href="/about">About</a></li>
-            <li><a class="grey-text-text-lighten-3" href="https://github.com/zugzw4ng/project-management-application">Github Repository</a></li>
-            <li><a class="grey-text-text-lighten-3" href={{!-- "*insert a link video to a project demo for this website*" --}}>Project Demo</a></li>
+            <li><a class="white-text" href="/about">About</a></li>
+            <li><a class="white-text"
+                href="https://github.com/zugzw4ng/project-management-application">Github Repository</a></li>
+            <li><a class="white-text"
+                href={{!-- "*insert a link video to a project demo for this website*" --}}>Project Demo</a></li>
+            {{#if logged_in}}
+            <li><i class="material-icons" id="logout-footer">logout</a></li>
+            {{/if}}
           </ul>
-        </div>
-        <div class="col-s6">
-          <ul id="nav-mobile" class="right hide-on-lg">
-          {{#if logged_in}}
-          <li><a href="/">Home</a></li>
-          <li><a id="logout-footer">Logout</a></li>
-          {{/if}}
-        </ul>
         </div>
       </div>
     </div>
