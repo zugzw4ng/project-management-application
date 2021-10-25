@@ -20,31 +20,10 @@ Our team has created a Project Management Application entitled Get to Work using
 
 The User should first clone the repository to their local computer from GitHub and then download  Node.js, Express.js, Sequelize, MySQL, MySQL 2, dotenv, bcrypt, express-session, express-handlebars, connect-session-sequelize, nodemon, materialize, day.js. 
 
-  The user should then run the following commands:
+  The user should then run the following command:
 
-`npm init -y`
+`npm install`
 
-`npm install mysql2`
-
-`npm install sequelize`
-
-`npm install dotenv`
-
-`npm install bcrypt`
-
-`npm install express-session`
-
-`npm install express-handlebars`
-
-`npm install express`
-
-`npm install connect-session-sequelize`
-
-`npm install nodemon`
-
-`npm install dayjs --save`
-
-`npm install materialize-css@next`
 
 ## Usage
                               
@@ -55,8 +34,10 @@ User(s) can collaborate with team members in order to meet project deadlines.
 Team members can set team wide or personal deadlines for projects. A project due date and time will be available to see for each project and will warn users of an upcoming deadline or when a deadline has been missed.
 
 ## Screenshots
+![Screen Shot 2021-10-25 at 11 45 11 AM](https://user-images.githubusercontent.com/88289885/138728538-7e99d154-f1d1-42e4-a830-7bc4ba8b4fcc.png)
+![Screen Shot 2021-10-25 at 11 48 34 AM](https://user-images.githubusercontent.com/88289885/138728533-c78de5f6-d276-461d-a60d-9c5aa8ff9c55.png)
+![Screen Shot 2021-10-25 at 11 48 03 AM](https://user-images.githubusercontent.com/88289885/138728535-fe759438-9f23-4ee7-9610-d16402a4bbd0.png)
 
-![Screen Shot 2021-10-22 at 2 43 39 PM](https://user-images.githubusercontent.com/88289885/138507055-51e72e58-1345-4500-b572-6cc7c82c7ee7.png)
 
 
 ## Technologies Used
